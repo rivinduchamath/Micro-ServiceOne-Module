@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="seller" />
+        <module name="hystrix" />
+        <module name="item" />
+        <module name="supplier" />
+        <module name="registory" />
+        <module name="cart" />
+        <module name="customer" />
+        <module name="order" />
+        <module name="cgateway" />
+      </profile>
+      <profile name="Annotation profile for untitled" enabled="true">
+        <sourceOutputDir name="../item/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../item/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="customer (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud_gatewa" target="11" />
+      <module name="cloud_gateway" target="11" />
+      <module name="cloudgateway" target="11" />
+      <module name="cloudgateway (1)" target="1.5" />
+      <module name="customer" target="1.8" />
+      <module name="hystrixdashboard" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cart" options="-parameters" />
+      <module name="cgateway" options="-parameters" />
+      <module name="cloud_gatewa" options="-parameters" />
+      <module name="cloudgateway" options="-parameters" />
+      <module name="customer" options="-parameters" />
+      <module name="customer (1)" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
+      <module name="item" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="registory" options="-parameters" />
+      <module name="seller" options="-parameters" />
+      <module name="supplier" options="-parameters" />
+    </option>
+  </component>
+</project>
