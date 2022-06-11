@@ -4,10 +4,14 @@ import lk.sliit.mtit.ecommerce.cart.dao.CartDAO;
 import lk.sliit.mtit.ecommerce.cart.dto.CartDTO;
 import lk.sliit.mtit.ecommerce.cart.entity.Cart;
 import lk.sliit.mtit.ecommerce.cart.service.CartBO;
+import lk.sliit.mtit.ecommerce.cart.valueObjects.Customer;
+import lk.sliit.mtit.ecommerce.cart.valueObjects.Item;
+import lk.sliit.mtit.ecommerce.cart.valueObjects.ResponseTemplateVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +22,8 @@ import java.util.List;
 public class CartBOImpl implements CartBO {
     @Autowired
     private CartDAO cartDAO;
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Override
     public CartDTO saveCart(CartDTO cartDTO) {
@@ -81,5 +87,24 @@ public class CartBOImpl implements CartBO {
             ));
         }
         return cartDTOS;
+    }
+    @Override
+    public ResponseTemplateVO getCartWithItemAndCustomer(Long id) {
+        ResponseTemplateVO vo = new ResponseTemplateVO();
+        Cart cart = cartDAO.getByCartId(id);
+
+
+        Item item =
+                restTemplate.getForObject("http://ITEM-SERVICE/items/" +
+                        cart.getItemId(), Item.class);
+        Customer customer =
+                restTemplate.getForObject("http://CUSTOMER-SERVICE/customers/" +
+                        cart.getUserId(), Customer.class);
+
+
+        vo.setCustomer(customer);
+        vo.setCart(cart);
+        vo.setItem(item);
+        return vo;
     }
 }

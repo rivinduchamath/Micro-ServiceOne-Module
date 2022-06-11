@@ -29,7 +29,6 @@
       <module name="cloud_gateway" target="11" />
       <module name="cloudgateway" target="11" />
       <module name="cloudgateway (1)" target="1.5" />
-      <module name="customer" target="1.8" />
       <module name="hystrixdashboard" target="1.5" />
     </bytecodeTargetLevel>
   </component>

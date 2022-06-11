@@ -2,6 +2,7 @@ package lk.sliit.mtit.ecommerce.cart.controller;
 
 import lk.sliit.mtit.ecommerce.cart.dto.CartDTO;
 import lk.sliit.mtit.ecommerce.cart.service.CartBO;
+import lk.sliit.mtit.ecommerce.cart.valueObjects.ResponseTemplateVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +34,11 @@ public class CartController {
                            @RequestBody CartDTO cartDTO){
         cartDTO.setCartId(cartId);
         cartBO.updateCart(cartDTO);
+    }
+    @GetMapping("/all/{cartId}")
+    public ResponseTemplateVO getUserWithDepartment(@PathVariable("cartId") Long userId) {
+
+        return cartBO.getCartWithItemAndCustomer(userId);
     }
 
     @GetMapping("/getAll")
