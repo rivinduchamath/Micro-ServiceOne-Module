@@ -22,6 +22,7 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public ItemDTO saveItem(ItemDTO itemDTO) {
+        System.out.println(itemDTO+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         itemDAO.save(new Item(
                 itemDTO.getItemId(),
                 itemDTO.getItemName(),

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/cart" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/cgateway" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/customer" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/hystrix" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/item" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/item/src/main/java" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/item/src/main/resources" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/item/src/test/java" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/order" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/registory" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/seller" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/supplier" libraries="{Node.js Core}" />
+  </component>
+</project>
