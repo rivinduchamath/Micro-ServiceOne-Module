@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +19,10 @@ public class ItemBOImpl implements ItemBO {
     @Autowired
     private ItemDAO itemDAO;
 
+
     @Override
     public ItemDTO saveItem(ItemDTO itemDTO) {
-        System.out.println(itemDTO+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
         itemDAO.save(new Item(
                 itemDTO.getItemId(),
                 itemDTO.getItemName(),
@@ -31,6 +31,7 @@ public class ItemBOImpl implements ItemBO {
                 itemDTO.getDate(),
                 itemDTO.getSellerId()
         ));
+//    itemDTO.setItemId(itemDAO.getLastItemId());
         log.info("Save Item");
         return itemDTO;
     }

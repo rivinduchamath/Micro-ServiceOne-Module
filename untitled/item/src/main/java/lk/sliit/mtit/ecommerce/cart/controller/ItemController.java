@@ -7,10 +7,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/items")
@@ -21,8 +21,10 @@ public class ItemController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value ="/saveItem",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ItemDTO saveItem( @RequestBody  ItemDTO itemDTO){
-        return itemBO.saveItem(itemDTO);
+    public @ResponseBody String saveItem( @RequestBody  ItemDTO itemDTO){
+        ItemDTO itemDTO2 = itemBO.saveItem(itemDTO);
+        System.out.println(itemDTO2+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        return "\"" + itemDTO2.getItemId() + "\"";
     }
 
     @GetMapping(value="/{itemId}")
@@ -30,7 +32,7 @@ public class ItemController {
         return itemBO.getItem(itemId);
     }
 
-    @DeleteMapping("/{itemId}")
+    @DeleteMapping("/delete/{itemId}")
     public void deleteItem(@PathVariable("itemId") Long itemId){
         itemBO.deleteItem(itemId);
     }
